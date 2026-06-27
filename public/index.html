@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CALdo — Calendar + ToDo Manager</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>CALdo</h1>
+    <p class="tagline">Calendar + ToDo Task Manager</p>
+  </header>
+
+  <main class="app-layout">
+    <!-- Calendar panel -->
+    <section class="calendar-panel">
+      <div class="calendar-controls">
+        <button id="prevMonth" aria-label="Previous month">&#8592;</button>
+        <h2 id="monthLabel"></h2>
+        <button id="nextMonth" aria-label="Next month">&#8594;</button>
+      </div>
+
+      <div class="weekday-row">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
+        <span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+
+      <div id="calendarGrid" class="calendar-grid"></div>
+
+      <div class="event-form">
+        <h3>Add Event</h3>
+        <input type="text" id="eventTitle" placeholder="Event title" />
+        <input type="date" id="eventDate" />
+        <input type="time" id="eventTime" />
+        <button id="addEventBtn">Add Event</button>
+      </div>
+
+      <div id="dayDetails" class="day-details"></div>
+    </section>
+
+    <!-- Todo panel -->
+    <section class="todo-panel">
+      <h2>Tasks</h2>
+      <div class="task-form">
+        <input type="text" id="taskTitle" placeholder="Task title" />
+        <input type="date" id="taskDueDate" />
+        <select id="taskPriority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button id="addTaskBtn">Add Task</button>
+      </div>
+
+      <div class="task-filters">
+        <button class="filter-btn active" data-status="all">All</button>
+        <button class="filter-btn" data-status="pending">Pending</button>
+        <button class="filter-btn" data-status="in_progress">In Progress</button>
+        <button class="filter-btn" data-status="completed">Completed</button>
+      </div>
+
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
